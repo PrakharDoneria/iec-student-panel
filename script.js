@@ -4,7 +4,7 @@ document.getElementById('studentForm').addEventListener('submit', async function
     const name = document.getElementById('name').value;
     const year = document.getElementById('year').value;
     const section = document.getElementById('section').value;
-    const roll_number = document.getElementById('roll_number').value;
+    const roll_number = document.getElementById('roll_number').value || null;
     const mobile_number = document.getElementById('mobile_number').value;
 
     const classNumber = year + section.toUpperCase();
@@ -52,17 +52,17 @@ document.getElementById('studentForm').addEventListener('submit', async function
 });
 
 const images = ['assets/bg1.jpg', 'assets/bg2.jpg', 'assets/bg3.jpg'];
-
 let currentIndex = Math.floor(Math.random() * images.length);
 const backgroundDiv = document.querySelector('.background');
 
 function changeBackgroundImage() {
-    backgroundDiv.style.opacity = '0'; 
+    backgroundDiv.style.transition = 'opacity 1.5s ease';
+    backgroundDiv.style.opacity = '0';
     setTimeout(() => {
         currentIndex = (currentIndex + 1) % images.length;
         backgroundDiv.style.backgroundImage = `url(${images[currentIndex]})`;
         backgroundDiv.style.opacity = '1';
-    }, 1500); 
+    }, 1500);
 }
 
 backgroundDiv.style.backgroundImage = `url(${images[currentIndex]})`;
