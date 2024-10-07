@@ -4,8 +4,10 @@ document.getElementById('studentForm').addEventListener('submit', async function
     const name = document.getElementById('name').value;
     const year = document.getElementById('year').value;
     const section = document.getElementById('section').value;
-    const roll_number = document.getElementById('roll_number').value || null;
     const mobile_number = document.getElementById('mobile_number').value;
+
+    const rollNumberField = document.getElementById('roll_number');
+    const roll_number = rollNumberField ? rollNumberField.value : null;
 
     const classNumber = year + section.toUpperCase();
 
