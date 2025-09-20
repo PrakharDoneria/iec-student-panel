@@ -17,7 +17,7 @@ document.getElementById('studentForm').addEventListener('submit', async function
     }];
 
     try {
-        const response = await fetch('https://iec-group-of-institutions.onrender.com/add_students', {
+        const response = await fetch('https://iec-attendance-nodejs.onrender.com/students/add_students', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
